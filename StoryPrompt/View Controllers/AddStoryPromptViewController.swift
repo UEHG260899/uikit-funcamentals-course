@@ -8,7 +8,7 @@
 import UIKit
 import PhotosUI
 
-class ViewController: UIViewController {
+class AddStoryPromptViewController: UIViewController {
 
     @IBOutlet weak var nounTextField: UITextField!
     @IBOutlet weak var adjectiveTextField: UITextField!
@@ -23,11 +23,27 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         numberSlider.value = 7.5
         setupActions()
+        setupNotifications()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "StoryPrompt" {
+            guard let storyPromtViewController = segue.destination as? StoryPromptViewController else {
+                return
+            }
+
+            storyPromtViewController.storyPrompt = storyPrompt
+            storyPromtViewController.isNewStoryPrompt = true
+        }
     }
     
     private func setupActions() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(changeImage))
         storyPromptImageView.addGestureRecognizer(tapGesture)
+    }
+    
+    private func setupNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(updateStoryPrompt), name: UIResponder.keyboardDidHideNotification, object: nil)
     }
     
     @objc
@@ -59,7 +75,7 @@ class ViewController: UIViewController {
         updateStoryPrompt()
         
         if storyPrompt.isValid() {
-            print(storyPrompt)
+            performSegue(withIdentifier: "StoryPrompt", sender: nil)
         } else {
             let alert = UIAlertController(title: "Invalid Story Prompt", message: "Please fill out all of the fields", preferredStyle: .alert)
             let action = UIAlertAction(title: "OK", style: .default)
@@ -68,23 +84,28 @@ class ViewController: UIViewController {
             present(alert, animated: true)
         }
     }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 }
 
-extension ViewController: UITextFieldDelegate {
+extension AddStoryPromptViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        updateStoryPrompt()
+//        updateStoryPrompt()
         return true
     }
     
-    func updateStoryPrompt() {
+    @objc func updateStoryPrompt() {
         storyPrompt.noun = nounTextField.text ?? ""
         storyPrompt.adjective = adjectiveTextField.text ?? ""
         storyPrompt.verb = verbTextFIeld.text ?? ""
+        storyPrompt.number = Int(numberSlider.value)
     }
 }
 
-extension ViewController: PHPickerViewControllerDelegate {
+extension AddStoryPromptViewController: PHPickerViewControllerDelegate {
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         
         if !results.isEmpty {

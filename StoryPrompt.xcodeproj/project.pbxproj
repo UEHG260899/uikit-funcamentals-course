@@ -9,25 +9,29 @@
 /* Begin PBXBuildFile section */
 		A48636F828234303000CEE2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48636F728234303000CEE2B /* AppDelegate.swift */; };
 		A48636FA28234303000CEE2B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48636F928234303000CEE2B /* SceneDelegate.swift */; };
-		A48636FC28234303000CEE2B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48636FB28234303000CEE2B /* ViewController.swift */; };
+		A48636FC28234303000CEE2B /* AddStoryPromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48636FB28234303000CEE2B /* AddStoryPromptViewController.swift */; };
 		A48636FF28234303000CEE2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A48636FD28234303000CEE2B /* Main.storyboard */; };
 		A486370128234303000CEE2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A486370028234303000CEE2B /* Assets.xcassets */; };
 		A486370428234303000CEE2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A486370228234303000CEE2B /* LaunchScreen.storyboard */; };
 		A486370E2823441E000CEE2B /* StoryPromptEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A486370C2823441E000CEE2B /* StoryPromptEntry.swift */; };
 		A486370F2823441E000CEE2B /* StoryPrompts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A486370D2823441E000CEE2B /* StoryPrompts.swift */; };
+		A4B15D5E28235D3200D88659 /* StoryPromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B15D5D28235D3200D88659 /* StoryPromptViewController.swift */; };
+		A4B15D61282365C300D88659 /* StoryPromptTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B15D60282365C300D88659 /* StoryPromptTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A48636F428234303000CEE2B /* StoryPrompt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoryPrompt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A48636F728234303000CEE2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A48636F928234303000CEE2B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A48636FB28234303000CEE2B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A48636FB28234303000CEE2B /* AddStoryPromptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoryPromptViewController.swift; sourceTree = "<group>"; };
 		A48636FE28234303000CEE2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A486370028234303000CEE2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A486370328234303000CEE2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A486370528234303000CEE2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A486370C2823441E000CEE2B /* StoryPromptEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryPromptEntry.swift; sourceTree = "<group>"; };
 		A486370D2823441E000CEE2B /* StoryPrompts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryPrompts.swift; sourceTree = "<group>"; };
+		A4B15D5D28235D3200D88659 /* StoryPromptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPromptViewController.swift; sourceTree = "<group>"; };
+		A4B15D60282365C300D88659 /* StoryPromptTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StoryPromptTableViewController.swift; path = "StoryPrompt/View Controllers/StoryPromptTableViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +48,7 @@
 		A48636EB28234303000CEE2B = {
 			isa = PBXGroup;
 			children = (
+				A4B15D60282365C300D88659 /* StoryPromptTableViewController.swift */,
 				A48636F628234303000CEE2B /* StoryPrompt */,
 				A48636F528234303000CEE2B /* Products */,
 			);
@@ -60,10 +65,10 @@
 		A48636F628234303000CEE2B /* StoryPrompt */ = {
 			isa = PBXGroup;
 			children = (
+				A4B15D5F28235D4800D88659 /* View Controllers */,
 				A486370B28234311000CEE2B /* Models */,
 				A48636F728234303000CEE2B /* AppDelegate.swift */,
 				A48636F928234303000CEE2B /* SceneDelegate.swift */,
-				A48636FB28234303000CEE2B /* ViewController.swift */,
 				A48636FD28234303000CEE2B /* Main.storyboard */,
 				A486370028234303000CEE2B /* Assets.xcassets */,
 				A486370228234303000CEE2B /* LaunchScreen.storyboard */,
@@ -79,6 +84,15 @@
 				A486370D2823441E000CEE2B /* StoryPrompts.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A4B15D5F28235D4800D88659 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A48636FB28234303000CEE2B /* AddStoryPromptViewController.swift */,
+				A4B15D5D28235D3200D88659 /* StoryPromptViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,8 +166,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4B15D61282365C300D88659 /* StoryPromptTableViewController.swift in Sources */,
+				A4B15D5E28235D3200D88659 /* StoryPromptViewController.swift in Sources */,
 				A486370F2823441E000CEE2B /* StoryPrompts.swift in Sources */,
-				A48636FC28234303000CEE2B /* ViewController.swift in Sources */,
+				A48636FC28234303000CEE2B /* AddStoryPromptViewController.swift in Sources */,
 				A48636F828234303000CEE2B /* AppDelegate.swift in Sources */,
 				A486370E2823441E000CEE2B /* StoryPromptEntry.swift in Sources */,
 				A48636FA28234303000CEE2B /* SceneDelegate.swift in Sources */,
